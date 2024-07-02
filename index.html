@@ -14,12 +14,21 @@
         img {
             display: block;
             width: 100%;
-            height: 100%;
             object-fit: cover; /* Ensures the image covers the entire area without distortion */
         }
     </style>
 </head>
 <body>
-    <img src="img.jpg" alt="Bulu Budao">
+    <img id="randomImage" alt="Bulu Budao">
+    <script>
+        // 图片数量
+        const imageCount = 9; // 假设有5张图片
+        // 随机生成图片编号
+        const randomIndex = Math.floor(Math.random() * imageCount) + 1;
+        // 设置图片路径
+        const imgPath = `img/img${randomIndex}.jpg`;
+        // 获取img元素并设置src属性
+        document.getElementById('randomImage').src = imgPath;
+    </script>
 </body>
 </html>
